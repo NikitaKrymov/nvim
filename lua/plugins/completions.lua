@@ -3,6 +3,11 @@ return {
 		"hrsh7th/cmp-nvim-lsp",
 	},
 	{
+		"windwp/nvim-autopairs",
+		event = "InsertEnter",
+		config = true,
+	},
+	{
 		"L3MON4D3/LuaSnip",
 		dependencies = {
 			"saadparwaiz1/cmp_luasnip",
@@ -14,7 +19,8 @@ return {
 		config = function()
 			require("luasnip.loaders.from_vscode").lazy_load()
 			local cmp = require("cmp")
-
+			local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+			cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 			cmp.setup({
 				snippet = {
 					expand = function(args)

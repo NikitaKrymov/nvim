@@ -16,6 +16,7 @@ vim.keymap.set({ "n", "i" }, "<C-j>", ":m+<CR>")
 vim.keymap.set("v", "<C-k>", ":m '<-2<CR>gv=gv")
 vim.keymap.set("v", "<C-j>", ":m '>+1<CR>gv=gv")
 vim.keymap.set("n", "<C-f>", ":open split<CR>")
+vim.keymap.set("n", "<leader>s", ":w<CR>");
 
 vim.cmd("set shiftwidth=2")
 
